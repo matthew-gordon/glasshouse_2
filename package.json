@@ -6,7 +6,7 @@
     "ng": "ng",
     "deploy": "git push origin master && git push heroku master",
     "start": "node ./src/server/server.js",
-    "test": "NODE_ENV=test mocha && ng test",
+    "test": "NODE_ENV=test mocha && ./node_modules/.bin/karma start --single-run --browsers PhantomJS",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": "ng build --aot -prod"
