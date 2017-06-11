@@ -3,10 +3,8 @@ node_js:
   - "node"
 services:
   - postgresql
-before_install:
-- "export DISPLAY=:99.0"
-- "karma start"
 script:
+  - karma start
   - createdb glasshouse
   - createdb glasshouse_test
   - yarn test
