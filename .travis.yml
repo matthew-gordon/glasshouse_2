@@ -3,6 +3,9 @@ node_js:
   - "node"
 services:
   - postgresql
+before_install:
+- "export DISPLAY=:99.0"
+- "sh -e /etc/init.d/xvfb start"
 script:
   - createdb glasshouse
   - createdb glasshouse_test
