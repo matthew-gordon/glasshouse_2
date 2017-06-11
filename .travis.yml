@@ -6,3 +6,4 @@ services:
 script:
   - createdb glasshouse
   - createdb glasshouse_test
+  - yarn test
