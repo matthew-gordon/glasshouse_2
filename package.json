@@ -5,15 +5,15 @@
   "scripts": {
     "ng": "ng",
     "start": "node ./src/server/server.js",
-    "serve": "ng serve",
-    "build": "ng build --prod && yarn start",
     "test": "NODE_ENV=test mocha && ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "heroku-postinstall": "yarn build"
+    "postinstall": "ng build --aot -prod"
   },
   "private": true,
   "dependencies": {
+    "@angular/cli": "1.1.1",
+    "@angular/compiler-cli": "^4.0.0",
     "@angular/animations": "^4.0.0",
     "@angular/common": "^4.0.0",
     "@angular/compiler": "^4.0.0",
@@ -38,8 +38,6 @@
     "zone.js": "^0.8.4"
   },
   "devDependencies": {
-    "@angular/cli": "1.1.1",
-    "@angular/compiler-cli": "^4.0.0",
     "@angular/language-service": "^4.0.0",
     "@types/jasmine": "2.5.45",
     "@types/node": "~6.0.60",
