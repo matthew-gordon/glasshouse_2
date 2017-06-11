@@ -6,7 +6,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 
-const auth = require('./routes/auth');
+const auth = require('./src/server/routes/auth');
 
 require('dotenv').config();
 
@@ -25,11 +25,9 @@ const allowCrossDomain = (req, res, next) => {
 app.use(allowCrossDomain);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, 'dist')));
 
 app.use('/auth', auth);
-app.get('/', (req, res, next) => {
-  res.send('Hello world!');
-});
 
 // error handlers
 
