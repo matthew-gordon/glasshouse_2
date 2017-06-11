@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
+    "deploy": "git push origin master && git push heroku master",
     "start": "node ./src/server/server.js",
     "test": "NODE_ENV=test mocha && ng test",
     "lint": "ng lint",

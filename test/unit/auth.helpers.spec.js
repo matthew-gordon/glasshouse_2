@@ -7,7 +7,7 @@ const should = chai.should();
 const chaiHttp = require('chai-http');
 const knex = require('../../src/server/db/knex');
 const bcrypt = require('bcryptjs');
-const server = require('../../src/server/app');
+const server = require('../../app');
 
 const authHelpers = require('../../src/server/auth/_helpers');
 

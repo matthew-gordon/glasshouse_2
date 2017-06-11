@@ -29,6 +29,12 @@ app.use(express.static(path.join(__dirname, 'dist')));
 
 app.use('/auth', auth);
 
+// For all GET requests, send back index.html
+// so that PathLocationStrategy can be used
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/dist/index.html'));
+});
+
 // error handlers
 
 // development error handlers
