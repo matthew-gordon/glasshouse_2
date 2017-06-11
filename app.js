@@ -1,12 +1,18 @@
 'use strict';
 
 const path = require('path');
+
 const express = require('express');
 const app = express();
+const compression = require('compression');
+
+app.use(compression());
+
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 
 const auth = require('./src/server/routes/auth');
+
 
 require('dotenv').config();
 
